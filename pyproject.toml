@@ -39,6 +39,10 @@ warn_return_any = true
 warn_unused_ignores = true
 strict = true
 
+[[tool.mypy.overrides]]
+module = "tests.*"
+disable_error_code = ["var-annotated", "no-untyped-def", "no-untyped-call", "no-any-return"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q --cov=src --cov-report=term-missing --cov-fail-under=80"
